@@ -1,0 +1,149 @@
+1. Importação da Biblioteca:
+
+A biblioteca random é importada para que possamos gerar números aleatórios. Ela será usada para simular o lançamento de dados, o que será útil para determinar os resultados de ações, como ataques e dano.
+
+2. Função de Aguardar Tecla:
+
+Existe uma função chamada aguardar_tecla, que pausa a execução do jogo e espera que o jogador pressione Enter para continuar. Isso é útil para controlar o fluxo do jogo, permitindo que o jogador avance quando estiver pronto.
+
+3. Exibição do Nome do Jogo:
+
+O nome do jogo é exibido na tela, e o programa aguarda que o jogador pressione Enter antes de continuar. Isso cria uma pequena pausa antes de mostrar a primeira parte do jogo.
+
+4. Função de Criar Personagem:
+
+O jogador é solicitado a inserir seu nome.
+
+Em seguida, ele escolhe seu gênero (masculino ou feminino) e o programa valida essa entrada, pedindo para o jogador escolher novamente caso a entrada não seja válida.
+
+O jogador então escolhe a classe de seu personagem (Guerreiro, Patrulheiro, Paladino, Mago ou Bruxo). Novamente, o programa valida essa escolha, garantindo que o número escolhido corresponda a uma classe válida.
+
+5. Atributos do Personagem:
+
+O código então apresenta ao jogador uma lista de valores disponíveis (como 17, 15, 14, etc.), e o jogador deve distribuir esses valores entre os atributos do personagem: Força, Destreza, Constituição, Inteligência, Sabedoria e Carisma.
+
+O programa permite que o jogador escolha um valor para cada atributo, garantindo que o valor escolhido esteja entre as opções disponíveis. A cada escolha, o valor é removido da lista de valores disponíveis.
+
+6. Exibição do Resumo do Personagem:
+
+Após a distribuição dos atributos, o programa exibe um resumo completo do personagem, mostrando o nome, o gênero, a classe e os valores dos atributos.
+
+7. Pergunta sobre Continuação:
+
+O jogador é perguntado se deseja continuar. Ele pode escolher continuar ou refazer o personagem. Se a escolha for inválida, o programa pede para o jogador escolher novamente até que uma resposta válida seja dada.
+
+8. Introdução à História:
+
+O código apresenta a história do jogo, começando com uma introdução sobre o mundo onde o personagem vive e o perigo que o aguarda. O primeiro inimigo é então revelado ao jogador.
+
+9. Funções para Lançamento de Dados:
+
+São definidas duas funções para rolar dados. A primeira, rolar_d20(), rola um dado de 20 lados (d20), que será usado para determinar o sucesso ou falha em uma ação, como um ataque. A segunda, rolar_d10(), rola um dado de 10 lados (d10), usado para calcular o dano de um ataque.
+
+10. Escolha da Ação no Combate:
+
+O jogador escolhe uma ação entre três opções: atacar, usar poção ou fugir. O código garante que o jogador insira um número válido correspondente a uma dessas opções.
+
+11. Resolução do Combate:
+
+Se o jogador escolher atacar, ele será solicitado a escolher um atributo relacionado ao ataque (por exemplo, Força ou Destreza). O código então rola um dado de 20 lados para verificar se o ataque foi bem-sucedido (se o valor do dado for maior ou igual a 10). Caso o ataque seja bem-sucedido, o código rola um dado de 10 lados para calcular o dano causado ao inimigo.
+
+Se o jogador escolher usar uma poção, o código simula a restauração de sua energia (sem cálculos de dados).
+
+Se o jogador escolher fugir, o código tenta determinar se ele consegue escapar do combate (isso poderia ser determinado por outra rolagem de dado ou uma chance fixa).
+
+Essa é uma explicação geral, linha por linha, de como o código funciona. Ele organiza as interações do jogo, cria e personaliza o personagem, e gerencia o combate com base em ações e lançamentos de dados. Se precisar de mais detalhes em algum ponto, é só me avisar!
+
+
+
+
+
+
+Você disse:
+explica mais detalhado falando todas as funções que foram usadas e seus objetivos 
+
+
+O ChatGPT disse:
+Claro! Vou explicar detalhadamente todas as funções usadas no código e o objetivo de cada uma delas. Vou dividir em funções que definem comportamentos no código, de modo que você entenda completamente como cada parte funciona.
+
+1. Importação da Biblioteca random
+Objetivo:
+A biblioteca random é importada para permitir que o programa gere números aleatórios. No contexto deste jogo, ela é usada para simular o lançamento de dados, como dados de 20 lados (d20) e de 10 lados (d10), que são comuns em jogos de RPG para determinar o sucesso de ações (como ataques) e o dano causado.
+
+2. Função aguardar_tecla()
+Objetivo:
+A função aguardar_tecla() simplesmente faz uma pausa no jogo e espera que o jogador pressione a tecla Enter para continuar a execução do código. Isso ajuda a controlar o fluxo do jogo, permitindo que o jogador avance quando estiver pronto, em vez de o jogo seguir automaticamente.
+
+Como funciona:
+
+O comando input("\nPRESSIONE ENTER PARA CONTINUAR...") faz com que o programa "congele" na tela até que o jogador pressione Enter.
+
+Uso no código:
+Ela é usada em pontos chave do jogo, como logo após a exibição do nome do jogo, ou quando o jogador tem a chance de ver seu personagem e confirmar se deseja continuar.
+
+3. Função criar_personagem()
+Esta função é responsável por todo o processo de criação do personagem do jogador. Aqui, o jogador escolhe seu nome, gênero, classe, e distribui atributos.
+
+Objetivo e Passos da Função:
+1. Pedir o nome do jogador:
+O nome do personagem é solicitado com a linha nome_jogador = input("Digite seu nome: "). O valor do nome é armazenado na variável nome_jogador.
+
+2. Escolha do gênero:
+O programa solicita que o jogador escolha o gênero de seu personagem. O código valida essa entrada usando um while para garantir que o jogador escolha um valor válido ("1" para Masculino, "2" para Feminino). Se o valor não for válido, o programa pede novamente a escolha.
+
+3. Escolha da classe:
+O jogador escolhe uma classe entre as opções: Guerreiro, Patrulheiro, Paladino, Mago e Bruxo. O programa valida a escolha da classe de forma semelhante ao gênero, verificando se o número digitado corresponde a uma opção válida.
+
+4. Definir atributo principal da classe:
+Cada classe tem um atributo principal (como Força para Guerreiro, Destreza para Patrulheiro, etc.). O atributo principal é determinado por um dicionário chamado atributo_principal_dict.
+
+5. Atributos do personagem:
+O personagem possui 6 atributos: Força (For), Destreza (Dex), Constituição (Con), Inteligência (Int), Sabedoria (Sab) e Carisma (Car). O jogador distribui os valores (17, 15, 14, 12, 10, 8) entre esses atributos. O programa valida cada valor escolhido, garantindo que o valor seja uma das opções disponíveis.
+
+6. Exibição do resumo:
+Após a distribuição dos atributos, o resumo do personagem é exibido, com todos os detalhes como nome, gênero, classe e os valores dos atributos.
+
+Objetivo da função:
+A função permite que o jogador crie seu personagem, escolha suas características e defina os atributos para que o jogo possa seguir com as mecânicas baseadas nessas escolhas.
+
+4. Função rolar_d20()
+Objetivo:
+Essa função simula o lançamento de um dado de 20 lados, que é utilizado para determinar o sucesso ou falha de uma ação importante, como um ataque.
+
+Como funciona:
+A função utiliza o random.randint(1, 20), que retorna um número aleatório entre 1 e 20. Esse valor é o que o jogador rola para determinar o sucesso de uma ação.
+
+Uso no código:
+O valor retornado por essa função é usado para calcular o resultado do ataque durante o combate, determinando se o ataque foi bem-sucedido ou não.
+
+5. Função rolar_d10()
+Objetivo:
+Esta função simula o lançamento de um dado de 10 lados, utilizado para calcular o dano causado por um ataque bem-sucedido.
+
+Como funciona:
+Semelhante ao rolar_d20(), o random.randint(1, 10) gera um número aleatório entre 1 e 10, representando o dano causado ao inimigo.
+
+Uso no código:
+O valor retornado por essa função é somado ao bônus de ataque para calcular o dano total causado ao inimigo após o ataque.
+
+6. Lógica de Combate (Escolha da Ação)
+No momento do combate, o jogador tem três opções: Atacar, Usar Poção, ou Fugir. O código solicita que o jogador escolha uma ação através da entrada de um número (1 para atacar, 2 para usar poção, 3 para fugir).
+
+Objetivo:
+Atacar: O jogador escolhe um atributo para realizar o ataque (Força, Destreza, etc.), o dado de 20 lados é rolado, e o ataque é validado. Caso o valor do ataque seja suficiente (número >= 10), o dano é calculado com o dado de 10 lados.
+
+Usar Poção: O código simula o uso de uma poção que restaura energia, embora não haja cálculo de dados nesta ação.
+
+Fugir: O jogador tenta fugir do combate, mas o código não possui uma lógica para calcular o sucesso ou falha da fuga neste momento (poderia ser feito com uma rolagem de dado ou chance fixa).
+
+Objetivo da Lógica de Combate:
+Permitir que o jogador escolha o que deseja fazer durante o combate, usando as ações típicas de um jogo de RPG (atacar, usar itens ou fugir).
+
+Resumo das Funções:
+aguardar_tecla(): Pausa a execução do jogo e espera o jogador pressionar Enter para continuar.
+
+criar_personagem(): Cuida da criação do personagem, incluindo nome, gênero, classe e distribuição de atributos.
+
+rolar_d20(): Rolagem de um dado de 20 lados, usada para determinar o sucesso de ações como ataques.
+
+rolar_d10(): Rolagem de um dado de 10 lados, usado para calcular o dano causado por um ataque.
